@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="styleindes.css">
+</head>
+<body>
+ <div><h1 class="regform">Registration Form</h1></div>
+ <div class="main">
+     <form method = "post" action = "." name ="passdata">
+         <div id="name">
+             <h2 class="name">Name</h2>
+             <input class="firstname" type ="text" name = "firstname"><br>
+             <label class = "firstlabel">Enter your first name </label>
+             <input class="lastname" type ="text" name = "lastname"><br>
+             <label class = "lastlabel">Enter your last name </label>
+
+         </div>
+
+         <h2 class="name">Company</h2>
+         <input class="company" type="text" name ="company">
+
+         <h2 class="name">Email</h2>
+         <input class="email" type="text" name ="email">
+
+         <h2 class="name">Phone Number</h2>
+         <input class="code" type="text" name ="area_code">
+         <label class = "area_code">Area Code</label>
+         <input class="number" type="text" name ="phone">
+         <label class = "phone_number">Phone number</label>
+
+
+         <h2 class="name">Subject</h2>
+         <select class="option" name = "subject">
+             <option disabled="disabled" selected="selected">
+                 Choose an option
+
+             </option>
+             <option>Subject 1 </option>
+             <option>Subject 2 </option>
+             <option>Subject 3 </option>
+             <option>Subject 4 </option>
+
+         </select>
+
+         <h2 id="student">Are you a beginner?</h2>
+         <label class="radio">
+             <input class = "radio-one" name ="" type ="radio" checked="checked">
+             <span class = "checkmark"></span>
+             Yes
+
+         </label>
+
+          <label class="radio">
+             <input class = "radio-two" name ="" type ="radio" >
+             <span class = "checkmark"></span>
+              No
+
+         </label>
+
+         <button type="submit">Register</button>
+
+
+     </form>
+
+ </div>
+</body>
+</html>
