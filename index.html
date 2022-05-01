@@ -4,12 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
 
-    <link rel="stylesheet" href="styleindes.css">
+    <link rel="stylesheet" href="/static/Styleindes.css">
 </head>
 <body>
- <div><h1 class="regform">Registration Form</h1></div>
+
+    <div style="display: flex; justify-content: center;">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <br>
+                <div class="container" style="text-align: center; font-family: Poppins; width: 50%; ">
+                    <div class="alert alert-{{category}} " style="border-radius: 20px; padding: 15px 10px; {% if category== "success" %} background-color: rgba(125, 252, 245, 0.644); {% elif category=="danger" %} background-color: rgba(253, 4, 4, 0.404);  {% endif %} color: white; text-shadow: 1px 1px 1px rgb(0, 0, 0);">
+                    <p style="color: rgb(0, 0, 0); text-shadow: 1px 1px 1px rgb(245, 241, 241);">{{ message }}</p>
+                    </div>
+                </div>
+               
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+ <div><h1 class="regform" style="color: white;">Registration Form</h1></div>
+ 
+
  <div class="main">
-     <form method = "post" action = "." name ="passdata">
+     <form method = "POST" action = "/getvalue" name ="passdata">
          <div id="name">
              <h2 class="name">Name</h2>
              <input class="firstname" type ="text" name = "firstname"><br>
@@ -33,11 +51,9 @@
 
 
          <h2 class="name">Subject</h2>
-         <select class="option" name = "subject">
+         <select class="option" name="user_subject">
              <option disabled="disabled" selected="selected">
-                 Choose an option
-
-             </option>
+                 Choose an option </option>
              <option>Subject 1 </option>
              <option>Subject 2 </option>
              <option>Subject 3 </option>
@@ -45,20 +61,8 @@
 
          </select>
 
-         <h2 id="student">Are you a beginner?</h2>
-         <label class="radio">
-             <input class = "radio-one" name ="" type ="radio" checked="checked">
-             <span class = "checkmark"></span>
-             Yes
 
-         </label>
 
-          <label class="radio">
-             <input class = "radio-two" name ="" type ="radio" >
-             <span class = "checkmark"></span>
-              No
-
-         </label>
 
          <button type="submit">Register</button>
 
